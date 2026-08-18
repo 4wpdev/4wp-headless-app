@@ -1,0 +1,65 @@
+/* Hero Slider — Gutenberg editor (light shell, readable slide headers) */
+.grv-hero-slider-editor .components-base-control__label,
+.grv-hero-slider-editor .components-input-control__label,
+.grv-hero-slider-editor .components-textarea-control__label,
+.grv-hero-slider-editor .components-select-control__label {
+	color: #1a1a1a;
+}
+
+.grv-hero-slider-editor .components-base-control__help {
+	color: #666;
+}
+
+.grv-hero-slider-editor button[type="button"]:focus-visible {
+	outline: 2px solid #c3a24d;
+	outline-offset: 2px;
+}
+
+.grv-hero-slider-editor__settings {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.grv-hero-slider-editor__slides {
+	margin-top: 8px;
+	display: grid;
+	gap: 0;
+}
+
+.\34 wp-hero-slider-editor__full-height-note {
+	margin: 28px 0 0;
+	font-size: 12px;
+	color: #666;
+}
+
+@media (max-width: 782px) {
+	.grv-hero-slider-editor__settings {
+		grid-template-columns: 1fr;
+		gap: 0;
+		margin-bottom: 0;
+	}
+
+	.grv-hero-slider-editor .components-base-control {
+		margin-bottom: 12px;
+	}
+
+	.\34 wp-hero-slider-editor__full-height-note {
+		margin: 0 0 12px;
+	}
+
+	.grv-hero-slider-editor__slides {
+		margin-top: 0;
+	}
+
+	.grv-hero-slider-editor__slide-toggle {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.grv-hero-slider-editor__slide-body {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}

@@ -1,0 +1,121 @@
+/* Editor — hide onboarding */
+.edit-post-welcome-guide,
+.edit-post-fullscreen-mode-close.components-button.has-icon {
+	display: none !important;
+}
+
+/* Editor — full width on mobile, divider-only GRV block shells */
+@media (max-width: 782px) {
+	.editor-visual-editor.has-padding {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.editor-styles-wrapper {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.editor-styles-wrapper .has-global-padding,
+	.editor-styles-wrapper .is-root-container,
+	.editor-styles-wrapper .wp-block-post-content-has-global-padding {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		--wp--style--root--padding-left: 0 !important;
+		--wp--style--root--padding-right: 0 !important;
+	}
+
+	html :where(.editor-styles-wrapper) :where(.wp-block) {
+		max-width: none !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.editor-styles-wrapper :where(:not(.is-layout-flex, .is-layout-grid)) > .wp-block {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	/* GRV block shell — contrast divider between blocks only */
+	[class*="grv-"][class*="-editor"] {
+		border: none !important;
+		/* border-top: 2px solid #c9a227 !important; */
+		border-bottom: none !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+
+	.is-root-container > .wp-block:first-child [class*="grv-"][class*="-editor"] {
+		border-top: none !important;
+		padding-top: 4px !important;
+	}
+
+	[class*="grv-"][class*="-editor"] .components-base-control {
+		margin-bottom: 12px !important;
+	}
+
+	/* Inside blocks — light separators */
+	.grv-linked-section-editor__content,
+	.grv-linked-section-editor__media,
+	.\34 wp-editor-inner-card {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		background: transparent !important;
+		border: none !important;
+		border-radius: 0 !important;
+	}
+
+	.grv-linked-section-editor__media,
+	.\34 wp-editor-inner-card:not(:first-child),
+	.grv-hero-slider-editor__slide {
+		border-top: 1px solid rgba(0, 0, 0, 0.07) !important;
+		margin-top: 6px !important;
+		padding-top: 8px !important;
+	}
+
+	.grv-hero-slider-editor__slide-body {
+		border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+		padding-top: 8px !important;
+	}
+
+	.\34 wp-editor-block-intro {
+		margin-bottom: 12px !important;
+		padding-bottom: 10px !important;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+	}
+
+	/* Hero — full width */
+	/* .grv-hero-slider-editor {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	} */
+
+	.grv-hero-slider-editor__slide {
+		background: transparent !important;
+		border-left: none !important;
+		border-right: none !important;
+		border-bottom: none !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+
+	/* Preview — icon only, no "Передперегляд" label */
+	.editor-header__post-preview-button,
+	.editor-post-preview {
+		font-size: 0 !important;
+		min-width: 36px !important;
+		padding-left: 8px !important;
+		padding-right: 8px !important;
+	}
+
+	.editor-header__post-preview-button svg,
+	.editor-post-preview svg {
+		width: 24px !important;
+		height: 24px !important;
+	}
+}

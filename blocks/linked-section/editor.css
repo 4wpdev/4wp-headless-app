@@ -1,0 +1,22 @@
+.grv-linked-section-editor__columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	margin-top: 12px;
+}
+
+.grv-linked-section-editor__stat-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+}
+
+@media (max-width: 782px) {
+	.grv-linked-section-editor__columns {
+		grid-template-columns: 1fr;
+	}
+
+	.grv-linked-section-editor__stat-row {
+		grid-template-columns: 1fr;
+	}
+}

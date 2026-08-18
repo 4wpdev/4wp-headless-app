@@ -3,7 +3,7 @@
  * Plugin Name: 4WP Headless App
  * Plugin URI: https://anatoliy.local/
  * Description: Headless API layer for the personal site app.
- * Version: 0.1.0
+ * Version: 0.1.41
  * Author: Anatoliy Dovgun
  * Author URI: https://anatoliy.local/
  * License: GPL-2.0-or-later
@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const FWP_HEADLESS_APP_VERSION = '0.1.0';
+const FWP_HEADLESS_APP_VERSION = '0.1.41';
 const FWP_HEADLESS_APP_OPTION_GROUP = '4wp_headless_app_settings';
 const FWP_HEADLESS_APP_OPTION_APP_KEY = '4wp_headless_app_key';
 const FWP_HEADLESS_APP_OPTION_SOURCE_TYPE = '4wp_headless_app_source_type';
@@ -24,10 +24,69 @@ const FWP_HEADLESS_APP_APPLY_NOTICE = '4wp_headless_app_apply_notice';
 const FWP_HEADLESS_APP_REST_NAMESPACE = '4wp/v1';
 
 require_once __DIR__ . '/includes/app-registry.php';
+require_once __DIR__ . '/includes/content-model.php';
+require_once __DIR__ . '/includes/rest-auth.php';
+require_once __DIR__ . '/includes/headless-site.php';
+require_once __DIR__ . '/includes/page-templates.php';
+require_once __DIR__ . '/includes/site-panel.php';
+require_once __DIR__ . '/includes/login-customization.php';
+require_once __DIR__ . '/includes/client-admin.php';
+require_once __DIR__ . '/includes/site-menus.php';
+require_once __DIR__ . '/includes/site-social.php';
+require_once __DIR__ . '/includes/block-breadcrumb.php';
+require_once __DIR__ . '/includes/geo-area-admin.php';
+require_once __DIR__ . '/includes/region-migrate.php';
+require_once __DIR__ . '/includes/site-seo.php';
+require_once __DIR__ . '/includes/site-telegram.php';
+require_once __DIR__ . '/includes/cta-advanced-block.php';
+require_once __DIR__ . '/includes/services-section-block.php';
+require_once __DIR__ . '/includes/how-it-works-block.php';
+require_once __DIR__ . '/includes/linked-section-block.php';
+require_once __DIR__ . '/includes/regions-section-block.php';
+require_once __DIR__ . '/includes/hero-slider-block.php';
+require_once __DIR__ . '/includes/taxonomy-term-order.php';
+require_once __DIR__ . '/includes/faq-block.php';
+require_once __DIR__ . '/includes/social-links-bar-block.php';
+require_once __DIR__ . '/includes/works-gallery-block.php';
+require_once __DIR__ . '/includes/cta-related-block.php';
+require_once __DIR__ . '/includes/steps-section-block.php';
+require_once __DIR__ . '/includes/contacts-section-block.php';
+require_once __DIR__ . '/includes/rich-text-block.php';
+require_once __DIR__ . '/includes/team-section-block.php';
+require_once __DIR__ . '/includes/work-item-admin.php';
+require_once __DIR__ . '/includes/team-member-admin.php';
+require_once __DIR__ . '/includes/seo.php';
+require_once __DIR__ . '/includes/cta-block.php';
+require_once __DIR__ . '/includes/cta-card-block.php';
+require_once __DIR__ . '/includes/static-rebuild.php';
+
+/**
+ * Enable Gutenberg HTML Anchor on all GRV section blocks (optional, never default).
+ *
+ * @param array<string, mixed> $args       Block type args.
+ * @param string               $block_type Block name.
+ * @return array<string, mixed>
+ */
+function fwp_headless_app_grv_block_supports_anchor( $args, $block_type ) {
+	if ( ! is_string( $block_type ) || ! str_starts_with( $block_type, 'grv/' ) ) {
+		return $args;
+	}
+	if ( ! is_array( $args ) ) {
+		$args = array();
+	}
+	$supports           = is_array( $args['supports'] ?? null ) ? $args['supports'] : array();
+	$supports['anchor'] = true;
+	$args['supports']   = $supports;
+	return $args;
+}
+add_filter( 'register_block_type_args', 'fwp_headless_app_grv_block_supports_anchor', 10, 2 );
 
 register_activation_hook( __FILE__, 'fwp_headless_app_on_activate' );
 add_action( 'admin_notices', 'fwp_headless_app_admin_notices' );
+add_action( 'admin_menu', 'fwp_headless_app_register_site_panel' );
 add_action( 'admin_menu', 'fwp_headless_app_register_menu' );
+add_action( 'admin_init', 'fwp_headless_app_register_site_panel_settings' );
+add_action( 'admin_enqueue_scripts', 'fwp_headless_app_enqueue_site_panel_assets' );
 add_action( 'admin_init', 'fwp_headless_app_register_settings' );
 add_action( 'init', 'fwp_headless_app_register_cpts' );
 add_action( 'rest_api_init', 'fwp_headless_app_register_rest_routes' );
@@ -38,6 +97,7 @@ add_action( 'save_post_fwp_skill', 'fwp_headless_app_save_skill_meta' );
 add_action( 'save_post_fwp_service', 'fwp_headless_app_save_service_meta' );
 add_action( 'save_post_fwp_experience', 'fwp_headless_app_save_experience_meta' );
 add_action( 'rest_api_init', 'fwp_headless_app_register_contact_routes' );
+add_action( 'rest_api_init', 'fwp_headless_app_register_site_export_rest_routes' );
 add_action( 'fwp_project_category_add_form_fields', 'fwp_headless_app_render_project_category_add_fields' );
 add_action( 'fwp_project_category_edit_form_fields', 'fwp_headless_app_render_project_category_edit_fields' );
 add_action( 'created_fwp_project_category', 'fwp_headless_app_save_project_category_fields' );
@@ -74,11 +134,32 @@ function fwp_headless_app_admin_notices() {
 		<?php
 	}
 
-	if ( get_transient( FWP_HEADLESS_APP_APPLY_NOTICE ) ) {
+	$apply_notice = get_transient( FWP_HEADLESS_APP_APPLY_NOTICE );
+	if ( $apply_notice ) {
 		delete_transient( FWP_HEADLESS_APP_APPLY_NOTICE );
+		$stats = is_array( $apply_notice ) ? $apply_notice : array();
 		?>
 		<div class="notice notice-success">
-			<p><?php echo esc_html__( 'App profile applied successfully.', '4wp-headless-app' ); ?></p>
+			<p>
+				<?php echo esc_html__( 'App profile applied successfully.', '4wp-headless-app' ); ?>
+				<?php if ( ! empty( $stats ) ) : ?>
+					<?php
+					printf(
+						' %s',
+						esc_html(
+							sprintf(
+								'Imported: %d work items, %d team, %d FAQ, %d pages, %d geo terms.',
+								(int) ( $stats['work_item'] ?? 0 ),
+								(int) ( $stats['team_member'] ?? 0 ),
+								(int) ( $stats['faq_item'] ?? 0 ),
+								(int) ( $stats['pages'] ?? 0 ),
+								(int) ( $stats['geo_area'] ?? 0 )
+							)
+						)
+					);
+					?>
+				<?php endif; ?>
+			</p>
 		</div>
 		<?php
 	}
@@ -141,14 +222,18 @@ function fwp_headless_app_register_menu() {
 		'fwp_headless_app_render_settings_page'
 	);
 
-	add_submenu_page(
-		'4wp-headless-app',
-		$general_page_title,
-		$general_title,
-		'manage_options',
-		'4wp-headless-app-general',
-		'fwp_headless_app_render_general_settings_page'
-	);
+	// Portfolio profile settings stay under 4WP Headless App.
+	// Site export profiles use the branded top-level site panel.
+	if ( ! fwp_headless_app_should_show_site_panel() ) {
+		add_submenu_page(
+			'4wp-headless-app',
+			$general_page_title,
+			$general_title,
+			'manage_options',
+			'4wp-headless-app-general',
+			'fwp_headless_app_render_general_settings_page'
+		);
+	}
 }
 
 function fwp_headless_app_register_settings() {
@@ -696,69 +781,47 @@ function fwp_headless_app_get_profile_menu_title() {
 }
 
 function fwp_headless_app_register_cpts() {
+	$model = fwp_headless_app_get_content_model();
+	if ( empty( $model['post_types'] ) && empty( $model['taxonomies'] ) ) {
+		return;
+	}
+
 	$cpt_args = array(
-		'public' => true,
+		'public'       => true,
 		'show_in_rest' => true,
-		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
-		'has_archive' => false,
+		'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+		'has_archive'  => false,
 	);
 
-	register_post_type(
-		'fwp_skill',
-		array_merge(
-			$cpt_args,
+	$portfolio_cpts = array(
+		'fwp_skill'      => array( 'label' => 'Skills', 'menu_icon' => 'dashicons-chart-bar' ),
+		'fwp_experience' => array( 'label' => 'Experience', 'menu_icon' => 'dashicons-businessperson' ),
+		'fwp_project'    => array( 'label' => 'Projects', 'menu_icon' => 'dashicons-portfolio' ),
+		'fwp_service'    => array( 'label' => 'Services', 'menu_icon' => 'dashicons-admin-tools' ),
+	);
+
+	foreach ( $portfolio_cpts as $slug => $labels ) {
+		if ( ! fwp_headless_app_model_uses_post_type( $slug, $model ) ) {
+			continue;
+		}
+		register_post_type( $slug, array_merge( $cpt_args, $labels ) );
+	}
+
+	if ( fwp_headless_app_model_uses_taxonomy( 'fwp_project_category', $model ) ) {
+		register_taxonomy(
+			'fwp_project_category',
+			'fwp_project',
 			array(
-				'label' => 'Skills',
-				'menu_icon' => 'dashicons-chart-bar',
+				'label'        => 'Project Categories',
+				'public'       => true,
+				'show_in_rest' => true,
+				'hierarchical' => false,
 			)
-		)
-	);
+		);
+		register_taxonomy_for_object_type( 'post_tag', 'fwp_project' );
+	}
 
-	register_post_type(
-		'fwp_experience',
-		array_merge(
-			$cpt_args,
-			array(
-				'label' => 'Experience',
-				'menu_icon' => 'dashicons-businessperson',
-			)
-		)
-	);
-
-	register_post_type(
-		'fwp_project',
-		array_merge(
-			$cpt_args,
-			array(
-				'label' => 'Projects',
-				'menu_icon' => 'dashicons-portfolio',
-			)
-		)
-	);
-
-	register_post_type(
-		'fwp_service',
-		array_merge(
-			$cpt_args,
-			array(
-				'label' => 'Services',
-				'menu_icon' => 'dashicons-admin-tools',
-			)
-		)
-	);
-
-	register_taxonomy(
-		'fwp_project_category',
-		'fwp_project',
-		array(
-			'label' => 'Project Categories',
-			'public' => true,
-			'show_in_rest' => true,
-			'hierarchical' => false,
-		)
-	);
-
-	register_taxonomy_for_object_type( 'post_tag', 'fwp_project' );
+	fwp_headless_app_register_site_cpts( $model );
 }
 
 function fwp_headless_app_register_meta_boxes() {
@@ -1173,7 +1236,7 @@ function fwp_headless_app_register_rest_routes() {
 		array(
 			'methods' => 'GET',
 			'callback' => 'fwp_headless_app_rest_get_settings',
-			'permission_callback' => '__return_true',
+			'permission_callback' => 'fwp_headless_app_rest_cms_api_permission_callback',
 		)
 	);
 
@@ -1183,7 +1246,7 @@ function fwp_headless_app_register_rest_routes() {
 		array(
 			'methods' => 'GET',
 			'callback' => 'fwp_headless_app_rest_get_theme',
-			'permission_callback' => '__return_true',
+			'permission_callback' => 'fwp_headless_app_rest_cms_api_permission_callback',
 		)
 	);
 
@@ -1193,7 +1256,7 @@ function fwp_headless_app_register_rest_routes() {
 		array(
 			'methods' => 'GET',
 			'callback' => 'fwp_headless_app_rest_get_skills',
-			'permission_callback' => '__return_true',
+			'permission_callback' => 'fwp_headless_app_rest_cms_api_permission_callback',
 		)
 	);
 
@@ -1203,7 +1266,7 @@ function fwp_headless_app_register_rest_routes() {
 		array(
 			'methods' => 'GET',
 			'callback' => 'fwp_headless_app_rest_get_services',
-			'permission_callback' => '__return_true',
+			'permission_callback' => 'fwp_headless_app_rest_cms_api_permission_callback',
 		)
 	);
 
@@ -1213,7 +1276,7 @@ function fwp_headless_app_register_rest_routes() {
 		array(
 			'methods' => 'GET',
 			'callback' => 'fwp_headless_app_rest_get_experience',
-			'permission_callback' => '__return_true',
+			'permission_callback' => 'fwp_headless_app_rest_cms_api_permission_callback',
 		)
 	);
 
@@ -1223,7 +1286,7 @@ function fwp_headless_app_register_rest_routes() {
 		array(
 			'methods' => 'GET',
 			'callback' => 'fwp_headless_app_rest_get_projects',
-			'permission_callback' => '__return_true',
+			'permission_callback' => 'fwp_headless_app_rest_cms_api_permission_callback',
 		)
 	);
 }
@@ -1241,12 +1304,30 @@ function fwp_headless_app_register_contact_routes() {
 }
 
 function fwp_headless_app_rest_contact_submit( $request ) {
-	$params = $request->get_json_params();
-	$name = sanitize_text_field( $params['name'] ?? '' );
-	$email = sanitize_email( $params['email'] ?? '' );
-	$message = sanitize_textarea_field( $params['message'] ?? '' );
+	$params  = $request->get_json_params();
+	$name    = sanitize_text_field( $params['name'] ?? '' );
+	$email   = sanitize_email( $params['email'] ?? '' );
+	$phone   = sanitize_text_field( $params['phone'] ?? '' );
+	$message = sanitize_textarea_field( $params['message'] ?? ( $params['comment'] ?? '' ) );
 
-	if ( empty( $email ) || empty( $message ) ) {
+	// Callback form: name + phone required. Classic form: email + message.
+	$is_callback = $phone !== '';
+	if ( $is_callback ) {
+		if ( '' === trim( $name ) ) {
+			return new WP_Error(
+				'fwp_headless_app_contact_invalid',
+				__( 'Name is required.', '4wp-headless-app' ),
+				array( 'status' => 422 )
+			);
+		}
+		if ( strlen( preg_replace( '/\D+/', '', $phone ) ) < 9 ) {
+			return new WP_Error(
+				'fwp_headless_app_contact_invalid',
+				__( 'Phone is required.', '4wp-headless-app' ),
+				array( 'status' => 422 )
+			);
+		}
+	} elseif ( empty( $email ) || empty( $message ) ) {
 		return new WP_Error(
 			'fwp_headless_app_contact_invalid',
 			__( 'Email and message are required.', '4wp-headless-app' ),
@@ -1254,17 +1335,44 @@ function fwp_headless_app_rest_contact_submit( $request ) {
 		);
 	}
 
-	$settings = get_option( FWP_HEADLESS_APP_OPTION_SETTINGS_DATA, array() );
+	$settings  = get_option( FWP_HEADLESS_APP_OPTION_SETTINGS_DATA, array() );
 	$recipient = $settings['contact']['email'] ?? get_option( 'admin_email' );
-	$subject = 'New contact message';
+	if ( defined( 'FWP_HEADLESS_APP_SITE_OPTION_SETTINGS' ) ) {
+		$site_settings = get_option( FWP_HEADLESS_APP_SITE_OPTION_SETTINGS, array() );
+		if ( is_array( $site_settings ) && ! empty( $site_settings['email'] ) && is_email( $site_settings['email'] ) ) {
+			$recipient = $site_settings['email'];
+		}
+	}
 
-	$body = "Name: {$name}\n";
-	$body .= "Email: {$email}\n\n";
-	$body .= $message;
+	if ( $is_callback ) {
+		$subject = 'Замовлення дзвінка — GRV BUILD';
+		$body    = "Ім'я: {$name}\n";
+		$body   .= "Телефон: {$phone}\n";
+		if ( $message !== '' ) {
+			$body .= "Коментар:\n{$message}\n";
+		}
+	} else {
+		$subject = 'New contact message';
+		$body    = "Name: {$name}\n";
+		$body   .= "Email: {$email}\n\n";
+		$body   .= $message;
+	}
 
 	$headers = array();
 	if ( $email ) {
 		$headers[] = 'Reply-To: ' . $email;
+	}
+
+	if ( function_exists( 'fwp_headless_app_notify_contact_form_telegram' ) ) {
+		fwp_headless_app_notify_contact_form_telegram(
+			array(
+				'name'        => $name,
+				'email'       => $email,
+				'phone'       => $phone,
+				'message'     => $message,
+				'is_callback' => $is_callback,
+			)
+		);
 	}
 
 	wp_mail( $recipient, $subject, $body, $headers );
@@ -1272,6 +1380,7 @@ function fwp_headless_app_rest_contact_submit( $request ) {
 	return rest_ensure_response(
 		array(
 			'success' => true,
+			'message' => __( 'Thank you. We will contact you soon.', '4wp-headless-app' ),
 		)
 	);
 }
@@ -1358,6 +1467,15 @@ function fwp_headless_app_apply_profile() {
 		wp_safe_redirect( admin_url( 'admin.php?page=4wp-headless-app' ) );
 		exit;
 	}
+
+	if ( fwp_headless_app_profile_uses_site_export( $app_key ) ) {
+		$stats = fwp_headless_app_apply_site_profile( $seed );
+		set_transient( FWP_HEADLESS_APP_APPLY_NOTICE, $stats, 60 );
+		wp_safe_redirect( admin_url( 'admin.php?page=4wp-headless-app' ) );
+		exit;
+	}
+
+	fwp_headless_app_save_content_model( fwp_headless_app_get_content_model( $app_key ) );
 
 	if ( isset( $seed['settings'] ) ) {
 		update_option( FWP_HEADLESS_APP_OPTION_SETTINGS_DATA, $seed['settings'] );

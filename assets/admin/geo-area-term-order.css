@@ -1,0 +1,37 @@
+.wp-list-table .column-fwp_drag {
+	width: 36px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.fwp-term-drag-handle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #646970;
+	cursor: grab;
+}
+
+.fwp-term-drag-handle:hover,
+.fwp-term-drag-handle:focus {
+	color: #2271b1;
+}
+
+.fwp-term-drag-handle .dashicons {
+	pointer-events: none;
+}
+
+tr.fwp-term-sort-placeholder td {
+	background: #f0f6fc !important;
+	box-shadow: inset 0 0 0 2px #2271b1;
+	height: 48px;
+}
+
+.fwp-geo-term-order-notice {
+	margin: 12px 0;
+}

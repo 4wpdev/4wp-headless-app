@@ -1,0 +1,1453 @@
+{
+  "content_model": {
+    "app": "grv-build",
+    "version": 1,
+    "post_types": [
+      "work_item",
+      "team_member",
+      "faq_item",
+      "page"
+    ],
+    "taxonomies": [
+      "catalog_line",
+      "geo_area"
+    ],
+    "options": [
+      "site_settings",
+      "site_brand",
+      "nav_menus"
+    ]
+  },
+  "site_settings": {
+    "logo": "GRV",
+    "slogan": "Будуємо сьогодні — створюємо майбутнє",
+    "phone": "+380000000000",
+    "phone_2": "",
+    "email": "info@grvbuild.ua",
+    "address": "м. Луцьк, Волинська обл.",
+    "working_hours": "",
+    "social": {
+      "instagram": "https://instagram.com/grv_build",
+      "telegram": "https://t.me/grv_build",
+      "viber": "viber://chat?number=%2B380XXXXXXXXX",
+      "facebook": "https://facebook.com/grv_build",
+      "tiktok": "https://tiktok.com/@grv_build",
+      "youtube": "https://youtube.com/@grv_build",
+      "whatsapp": "https://wa.me/380XXXXXXXXX"
+    },
+    "cta": {
+      "primary_label": "Консультація",
+      "primary_url": "/contacts",
+      "secondary_label": "Наші роботи",
+      "secondary_url": "/our-works"
+    }
+  },
+  "site_brand": {
+    "primary_color": "#c9a227",
+    "primary_color_light": "#f5d06a",
+    "primary_color_dark": "#8a6d15",
+    "accent_color": "#c9a227",
+    "dark_bg": "#141414",
+    "dark_card": "#1e1e1e",
+    "dark_border": "#333333",
+    "gradient_gold": "linear-gradient(135deg, #b8911e 0%, #f5d06a 50%, #b8911e 100%)"
+  },
+  "nav_menus": {
+    "primary": [
+      {
+        "label": "Будівництво",
+        "href": "/budivnytstvo"
+      },
+      {
+        "label": "Фасад",
+        "href": "/fasad"
+      },
+      {
+        "label": "Ремонт",
+        "href": "/remont"
+      },
+      {
+        "label": "Про Нас",
+        "href": "/about-us"
+      },
+      {
+        "label": "Наші роботи",
+        "href": "/our-works"
+      },
+      {
+        "label": "Контакти",
+        "href": "/contacts"
+      }
+    ],
+    "services": [
+      {
+        "label": "Будівництво будинків",
+        "href": "/budivnytstvo"
+      },
+      {
+        "label": "Покрівельні роботи",
+        "href": "/budivnytstvo"
+      },
+      {
+        "label": "Фасадні роботи",
+        "href": "/fasad"
+      },
+      {
+        "label": "Утеплення фасадів",
+        "href": "/fasad"
+      },
+      {
+        "label": "Ремонт та реконструкція",
+        "href": "/remont"
+      },
+      {
+        "label": "Внутрішні роботи",
+        "href": "/remont"
+      }
+    ],
+    "regions": [
+      {
+        "label": "Луцьк",
+        "href": "/region/region-lutsk"
+      },
+      {
+        "label": "Луцький район",
+        "href": "/region/region-lutskyi-raion"
+      },
+      {
+        "label": "Ковель",
+        "href": "/region/region-kovel"
+      },
+      {
+        "label": "Рівне",
+        "href": "/region/region-rivne"
+      },
+      {
+        "label": "Нововолинськ",
+        "href": "/region/region-novovolynsk"
+      },
+      {
+        "label": "Володимир",
+        "href": "/region/region-volodymyr"
+      },
+      {
+        "label": "Дубно",
+        "href": "/region/region-dubno"
+      },
+      {
+        "label": "Острог",
+        "href": "/region/region-ostroh"
+      }
+    ],
+    "navigation": [
+      {
+        "label": "Головна",
+        "href": "/"
+      },
+      {
+        "label": "Про Нас",
+        "href": "/about-us"
+      },
+      {
+        "label": "Наші роботи",
+        "href": "/our-works"
+      },
+      {
+        "label": "Контакти",
+        "href": "/contacts"
+      }
+    ],
+    "header_cta": {
+      "label": "Консультація",
+      "href": "/contacts"
+    }
+  },
+  "catalog_line": [
+    {
+      "slug": "construction",
+      "label": "Будівництво",
+      "href": "/budivnytstvo",
+      "description": "Будівництво будинків (фундамент, коробка, дах, фасад)",
+      "items": [
+        "Будівництво приватних будинків з гарантією якості",
+        "Покрівельні роботи будь-якої складності",
+        "Монтаж та ремонт дахів (односхилий, двосхилий, вальмовий, мансардний, плоский, шатровий)",
+        "Фундамент (стрічковий, плитний, палевий)",
+        "Коробка будинку (цегла, блок, монолітний каркас)",
+        "Будинок під ключ від фундаменту до чистового оздоблення"
+      ]
+    },
+    {
+      "slug": "facade",
+      "label": "Фасади",
+      "href": "/fasad",
+      "description": "Фасадні роботи та утеплення",
+      "items": [
+        "Утеплення фасадів (пінопласт, мінеральна вата, PIR-плити)",
+        "Декоративна штукатурка (короїд, барашок)",
+        "Клінкерна плитка та натуральний камінь",
+        "Монтаж водостоків та підшивка софітів",
+        "Покраска фасаду"
+      ]
+    },
+    {
+      "slug": "repair",
+      "label": "Ремонт",
+      "href": "/remont",
+      "description": "Ремонт та реконструкція приміщень",
+      "items": [
+        "Капітальний ремонт приміщень",
+        "Реконструкція будинків (добудова та перепланування)",
+        "Внутрішні ремонтні роботи (штукатурка, стяжка, гіпсокартон)",
+        "Чистові роботи (фарбування, плитка, ламінат, монтаж дверей)",
+        "Камін та барбекю"
+      ]
+    }
+  ],
+  "geo_area": [
+    {
+      "oblast": "Волинська область",
+      "short": "Волинь",
+      "color": "#c9a227",
+      "description": "Основний регіон діяльності. Повний спектр послуг: будівництво будинків під ключ, фасадні роботи, утеплення, ремонт та реконструкція. Безкоштовний виїзд на об'єкт.",
+      "cities": [
+        {
+          "slug": "lutsk",
+          "name": "Луцьк",
+          "name_locative": "Луцьку",
+          "display_name": "м. Луцьк",
+          "href": "/region/region-lutsk",
+          "latitude": "50.7472",
+          "longitude": "25.3254",
+          "services": [
+            "construction",
+            "facade",
+            "repair"
+          ],
+          "description": "Будівництво та фасадні роботи в Луцьку та передмістях. Реалізовано понад 15 проєктів у обласному центрі.",
+          "hero_image": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/6b63c4973_image.png"
+        },
+        {
+          "slug": "lutskyi-raion",
+          "name": "Луцький район",
+          "name_locative": "Луцькому районі",
+          "display_name": "Луцький район",
+          "href": "/region/region-lutskyi-raion",
+          "services": [
+            "construction",
+            "facade"
+          ],
+          "description": "Будівництво приватних будинків та дач у Луцькому районі: Торчин, Рожище, Любомль, Боратин."
+        },
+        {
+          "slug": "kovel",
+          "name": "Ковель",
+          "name_locative": "Ковелі",
+          "display_name": "Ковель та Ковельський район",
+          "href": "/region/region-kovel",
+          "services": [
+            "construction",
+            "facade",
+            "repair"
+          ],
+          "description": "Будівельні та фасадні роботи у Ковелі, Голобах, Колках.",
+          "hero_image": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/90af1f515_image.png"
+        },
+        {
+          "slug": "volodymyr",
+          "name": "Володимир",
+          "name_locative": "Володимирі",
+          "display_name": "Володимир та Володимирський район",
+          "services": [
+            "construction",
+            "facade"
+          ],
+          "description": "Повний цикл будівельних робіт у Володимирі та районі."
+        },
+        {
+          "slug": "novovolynsk",
+          "name": "Нововолинськ",
+          "name_locative": "Нововолинську",
+          "display_name": "Нововолинськ",
+          "services": [
+            "facade",
+            "repair"
+          ],
+          "description": "Фасадні роботи та ремонт у Нововолинську."
+        },
+        {
+          "slug": "kamin-kashyrskyi",
+          "name": "Камінь-Каширський район",
+          "name_locative": "Камінь-Каширському районі",
+          "display_name": "Камінь-Каширський район",
+          "services": [
+            "construction",
+            "repair"
+          ],
+          "description": "Будівництво та реконструкція у Камінь-Каширському, Любешові та прилеглих селах."
+        },
+        {
+          "slug": "turiisk",
+          "name": "Турійський та Іваничівський райони",
+          "name_locative": "Турійському районі",
+          "display_name": "Турійський та Іваничівський райони",
+          "services": [
+            "facade",
+            "repair"
+          ],
+          "description": "Фасадні роботи та ремонт у Турійську та Іваничах."
+        },
+        {
+          "slug": "manevytsi",
+          "name": "Маневицький район",
+          "name_locative": "Маневицькому районі",
+          "display_name": "Маневицький район",
+          "services": [
+            "construction"
+          ],
+          "description": "Будівництво приватних будинків у Маневичах та Сенкевичівці."
+        }
+      ]
+    },
+    {
+      "oblast": "Рівненська область",
+      "short": "Рівненщина",
+      "color": "#e8c56a",
+      "description": "Виконуємо роботи в Рівненській області — особливо в прикордонних з Волинню районах.",
+      "cities": [
+        {
+          "slug": "rivne",
+          "name": "Рівне",
+          "name_locative": "Рівному",
+          "display_name": "м. Рівне та Рівненський район",
+          "href": "/region/region-rivne",
+          "services": [
+            "construction",
+            "facade",
+            "repair"
+          ],
+          "description": "Будівництво будинків під ключ, утеплення та фасадні роботи у Рівному та Рівненському районі."
+        },
+        {
+          "slug": "dubno",
+          "name": "Дубно",
+          "name_locative": "Дубні",
+          "display_name": "Дубнівський район",
+          "services": [
+            "facade",
+            "repair"
+          ],
+          "description": "Фасадні та ремонтні роботи у Дубні та прилеглих населених пунктах."
+        },
+        {
+          "slug": "ostroh",
+          "name": "Острог",
+          "name_locative": "Острозі",
+          "display_name": "Острозький район",
+          "services": [
+            "construction",
+            "facade"
+          ],
+          "description": "Будівництво та фасадні роботи в Острозі та районі."
+        },
+        {
+          "slug": "zdolbuniv",
+          "name": "Здолбунів",
+          "name_locative": "Здолбунові",
+          "display_name": "Здолбунівський район",
+          "services": [
+            "facade"
+          ],
+          "description": "Фасадні роботи та утеплення у Здолбунові та прилеглих районах."
+        }
+      ]
+    },
+    {
+      "oblast": "Львівська область",
+      "short": "Львівщина",
+      "color": "#f5d06a",
+      "description": "Суміжні райони Львівської області, що межують з Волинню. Виїзд можливий за умови достатнього обсягу робіт.",
+      "cities": [
+        {
+          "slug": "zolochiv",
+          "name": "Золочів",
+          "name_locative": "Золочеві",
+          "display_name": "Золочівський район",
+          "services": [
+            "construction",
+            "facade"
+          ],
+          "description": "Золочів та навколишні села — найближчий до Волині район Львівщини."
+        },
+        {
+          "slug": "brody",
+          "name": "Броди",
+          "name_locative": "Бродах",
+          "display_name": "Бродівський район",
+          "services": [
+            "facade",
+            "repair"
+          ],
+          "description": "Броди та Бродівський район: фасадні роботи, утеплення, ремонт фасадів."
+        },
+        {
+          "slug": "sokal",
+          "name": "Сокаль",
+          "name_locative": "Сокалі",
+          "display_name": "Сокальський район",
+          "services": [
+            "construction",
+            "facade"
+          ],
+          "description": "Сокаль та прикордонні з Волинню населені пункти: нове будівництво та капітальний ремонт фасадів."
+        }
+      ]
+    }
+  ],
+  "work_item": [
+    {
+      "id": "repair-sturmika",
+      "title": "Стурміка — ремонт інтер'єру",
+      "location_label": "Стурміка",
+      "catalog_line": [
+        "repair"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/90e78d0f6_1779879657415041_345e0c5e-0f9b-4d03-a7ac-8ef775d65f0d.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/90e78d0f6_1779879657415041_345e0c5e-0f9b-4d03-a7ac-8ef775d65f0d.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a5e48080b_5D75F260-8E33-455E-BB4F-B73B8ADD8DEF.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/8802deb7b_1779639871749925.jpg"
+      ],
+      "photo_labels": [
+        "Внутрішні роботи",
+        "Підготовка стін",
+        "Плиткові роботи"
+      ]
+    },
+    {
+      "id": "repair-dachne",
+      "title": "Дачне — ремонт та оздоблення",
+      "location_label": "Дачне",
+      "catalog_line": [
+        "repair"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/d4838fe09_1779639888200139.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/d4838fe09_1779639888200139.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a6a1a476d_1779639871749925.jpg"
+      ],
+      "photo_labels": [
+        "Венеціанська штукатурка",
+        "Оздоблення"
+      ]
+    },
+    {
+      "id": "repair-lutsk-kamin",
+      "title": "Луцьк — камін та облицювання",
+      "location_label": "Луцьк",
+      "catalog_line": [
+        "repair"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/9ece18ba7_1779639888200139.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/9ece18ba7_1779639888200139.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/023cb03f4_1779640493773383.jpg"
+      ],
+      "photo_labels": [
+        "Камін",
+        "Облицювання каміну"
+      ]
+    },
+    {
+      "id": "repair-boholyuby",
+      "title": "Боголюби — ремонт",
+      "location_label": "Боголюби",
+      "catalog_line": [
+        "repair"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/5c1764f9b_1779640495370728.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/5c1764f9b_1779640495370728.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/24f055dbd_1779640019874869.jpg"
+      ],
+      "photo_labels": [
+        "Стяжка підлоги",
+        "Підготовка"
+      ]
+    },
+    {
+      "id": "facade-sturmika",
+      "title": "Стурміка — фасадні роботи",
+      "location_label": "Стурміка",
+      "catalog_line": [
+        "facade"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/bbf9b3fe2_1779640019874869.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/bbf9b3fe2_1779640019874869.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/023cb03f4_1779640493773383.jpg"
+      ],
+      "photo_labels": [
+        "Фасад завершено",
+        "Декоративна штукатурка"
+      ]
+    },
+    {
+      "id": "facade-dachne",
+      "title": "Дачне — фасадне оздоблення",
+      "location_label": "Дачне",
+      "catalog_line": [
+        "facade"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/d4838fe09_1779639888200139.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/d4838fe09_1779639888200139.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a6a1a476d_1779639871749925.jpg"
+      ],
+      "photo_labels": [
+        "Фасадне оздоблення",
+        "Утеплення"
+      ]
+    },
+    {
+      "id": "facade-lutsk",
+      "title": "Луцьк — клінкерна плитка",
+      "location_label": "Луцьк",
+      "catalog_line": [
+        "facade"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/8802deb7b_1779639871749925.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/8802deb7b_1779639871749925.jpg"
+      ],
+      "photo_labels": [
+        "Клінкерна плитка"
+      ]
+    },
+    {
+      "id": "facade-boholyuby",
+      "title": "Боголюби — фасад під ключ",
+      "location_label": "Боголюби",
+      "catalog_line": [
+        "facade"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/5c1764f9b_1779640495370728.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/5c1764f9b_1779640495370728.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/24f055dbd_1779640019874869.jpg"
+      ],
+      "photo_labels": [
+        "Монтаж водостоків",
+        "Фасад під ключ"
+      ]
+    },
+    {
+      "id": "facade-kovel",
+      "title": "Ковель — утеплення фасаду",
+      "location_label": "Ковель",
+      "catalog_line": [
+        "facade"
+      ],
+      "geo_area": [
+        "kovel"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a6a1a476d_1779639871749925.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a6a1a476d_1779639871749925.jpg"
+      ],
+      "photo_labels": [
+        "Утеплення фасаду"
+      ]
+    },
+    {
+      "id": "construction-sturmika",
+      "title": "Стурміка — будівництво",
+      "location_label": "Стурміка",
+      "catalog_line": [
+        "construction"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/52806e3a3_foundation.png",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/52806e3a3_foundation.png",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/04e21a6ea_house-box.png"
+      ],
+      "photo_labels": [
+        "Фундамент",
+        "Коробка"
+      ]
+    },
+    {
+      "id": "construction-dachne",
+      "title": "Дачне — будівництво",
+      "location_label": "Дачне",
+      "catalog_line": [
+        "construction"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/4692335b4_roof.png",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/4692335b4_roof.png",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/83ab24b3a_1779640495370728.jpg"
+      ],
+      "photo_labels": [
+        "Покрівля",
+        "Будинок готовий"
+      ]
+    },
+    {
+      "id": "construction-lutsk",
+      "title": "Луцьк — перекриття",
+      "location_label": "Луцьк",
+      "catalog_line": [
+        "construction"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/183fa433a_1779640019874869.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/183fa433a_1779640019874869.jpg"
+      ],
+      "photo_labels": [
+        "Перекриття"
+      ]
+    },
+    {
+      "id": "construction-boholyuby",
+      "title": "Боголюби — будівництво",
+      "location_label": "Боголюби",
+      "catalog_line": [
+        "construction"
+      ],
+      "geo_area": [
+        "lutsk"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/9ece18ba7_1779639888200139.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/9ece18ba7_1779639888200139.jpg",
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/bbf9b3fe2_1779640019874869.jpg"
+      ],
+      "photo_labels": [
+        "Монолітні роботи",
+        "Зведення каркасу"
+      ]
+    },
+    {
+      "id": "construction-rivne",
+      "title": "Рівне — будинок",
+      "location_label": "Рівне",
+      "catalog_line": [
+        "construction"
+      ],
+      "geo_area": [
+        "rivne"
+      ],
+      "cover": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/24f055dbd_1779640019874869.jpg",
+      "gallery": [
+        "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/24f055dbd_1779640019874869.jpg"
+      ],
+      "photo_labels": [
+        "Коробка будинку"
+      ]
+    }
+  ],
+  "team_member": [
+    {
+      "sort_order": 1,
+      "name": "Віталій",
+      "full_name": "Віталій Грушовець",
+      "nick": "@grv_build",
+      "role": "Добрий Бригадир",
+      "subtitle": "Його бояться цегли",
+      "media_type": "video",
+      "media_url": "https://media.base44.com/videos/public/6a1311bd1062b12420e3c449/15cfe171c_welcome.mp4"
+    },
+    {
+      "sort_order": 2,
+      "name": "Максим",
+      "full_name": "Максим",
+      "nick": "@grv_max",
+      "role": "Плиточник від народження",
+      "subtitle": "Укладає навіть уві сні",
+      "media_type": "photo",
+      "media_url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/d4838fe09_1779639888200139.jpg"
+    },
+    {
+      "sort_order": 3,
+      "name": "Олег",
+      "full_name": "Олег",
+      "nick": "@grv_oleg",
+      "role": "Його чують за поглядом",
+      "subtitle": "Мовчить, але будує",
+      "media_type": "photo",
+      "media_url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/bbf9b3fe2_1779640019874869.jpg"
+    },
+    {
+      "sort_order": 4,
+      "name": "Андрій",
+      "full_name": "Андрій",
+      "nick": "@grv_andrii",
+      "role": "Фасадний Філософ",
+      "subtitle": "Думає штукатуркою",
+      "media_type": "video",
+      "media_url": "https://media.base44.com/videos/public/6a1311bd1062b12420e3c449/15cfe171c_welcome.mp4"
+    }
+  ],
+  "faq_item": [
+    {
+      "sort_order": 1,
+      "question": "Скільки коштує будівництво будинку під ключ?",
+      "answer": "Вартість залежить від площі, типу фундаменту, матеріалів та складності проєкту. Для точного розрахунку ми проводимо безкоштовний виїзд на об'єкт та складаємо детальний кошторис.",
+      "scope": [],
+      "pages": [
+        "/"
+      ]
+    },
+    {
+      "sort_order": 2,
+      "question": "Які гарантії ви надаєте на роботи?",
+      "answer": "Ми надаємо офіційну гарантію на всі виконані роботи. Конструктивні роботи — 5 років, оздоблювальні — 2 роки. Всі гарантії прописані в договорі.",
+      "scope": [],
+      "pages": [
+        "/"
+      ]
+    },
+    {
+      "sort_order": 3,
+      "question": "Як довго будується будинок?",
+      "answer": "Середній будинок площею 100-150 м² будується від 6 до 12 місяців залежно від сезону, складності та фінансування. Точні терміни фіксуються в договорі.",
+      "scope": [],
+      "pages": [
+        "/"
+      ]
+    },
+    {
+      "sort_order": 4,
+      "question": "Чи працюєте ви за договором?",
+      "answer": "Так, ми працюємо виключно за офіційним договором, в якому прописані всі роботи, терміни, вартість та гарантійні зобов'язання.",
+      "scope": [],
+      "pages": [
+        "/"
+      ]
+    },
+    {
+      "sort_order": 5,
+      "question": "Чи надаєте ви матеріали, чи тільки послуги?",
+      "answer": "Ми пропонуємо комплексний підхід — можемо виконати роботи з вашими матеріалами або закупити всі необхідні матеріали самостійно за ринковими цінами.",
+      "scope": [],
+      "pages": [
+        "/"
+      ]
+    },
+    {
+      "sort_order": 6,
+      "question": "Які регіони ви охоплюєте?",
+      "answer": "Ми працюємо переважно в Луцьку та Волинській області. Великі проєкти розглядаємо індивідуально.",
+      "scope": [],
+      "pages": [
+        "/"
+      ]
+    },
+    {
+      "sort_order": 7,
+      "question": "Чи виїжджаєте ви на оцінку безкоштовно?",
+      "answer": "Так, виїзд на об'єкт та складання кошторису — безкоштовно. Телефонуйте або заповніть форму, і ми погодимо зручний час.",
+      "scope": [
+        "geo_area"
+      ]
+    },
+    {
+      "sort_order": 8,
+      "question": "Скільки часу займає будівництво будинку?",
+      "answer": "Будинок площею 100–150 м² зводиться від 6 до 12 місяців. Точні терміни залежать від складності проєкту та погодних умов і фіксуються в договорі.",
+      "scope": [
+        "geo_area"
+      ]
+    },
+    {
+      "sort_order": 9,
+      "question": "Чи є у вас офіційний договір?",
+      "answer": "Так, ми працюємо виключно за офіційним договором. У ньому прописані всі роботи, матеріали, терміни, вартість та гарантійні зобов'язання.",
+      "scope": [
+        "geo_area"
+      ]
+    },
+    {
+      "sort_order": 10,
+      "question": "Яка гарантія на виконані роботи?",
+      "answer": "На конструктивні роботи — 5 років, на оздоблювальні — 2 роки. Всі гарантії прописані у договорі.",
+      "scope": [
+        "geo_area"
+      ]
+    },
+    {
+      "sort_order": 11,
+      "question": "Ви закуповуєте матеріали самостійно чи я маю їх надавати?",
+      "answer": "Обидва варіанти можливі. Ми можемо закупити матеріали за ринковими цінами або використати ваші — вибір залишається за клієнтом.",
+      "scope": [
+        "geo_area"
+      ]
+    },
+    {
+      "sort_order": 12,
+      "question": "Чи працюєте ви по всій Волині та за її межами?",
+      "answer": "Основна зона роботи — Луцьк і Волинська область. Великі об'єкти за межами Волині розглядаємо індивідуально.",
+      "scope": [
+        "geo_area"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "slug": "/",
+      "template": "blocks",
+      "h1": "Будівництво, фасади та ремонт на Волині",
+      "meta_description": "GRV BUILD — будівництво будинків під ключ, фасадні роботи та ремонт у Луцьку та Волинській області. Безкоштовний виїзд, офіційний договір, гарантія якості.",
+      "sections": [
+        {
+          "type": "hero_slider",
+          "height_mode": "full"
+        },
+        {
+          "type": "linked_section",
+          "preset": "build"
+        },
+        {
+          "type": "linked_section",
+          "preset": "facade"
+        },
+        {
+          "type": "linked_section",
+          "preset": "repair"
+        },
+        {
+          "type": "regions_section"
+        },
+        {
+          "type": "how_it_works"
+        },
+        {
+          "type": "services_section"
+        },
+        {
+          "type": "cta_advanced"
+        },
+        {
+          "type": "faq",
+          "title": "Часті запитання"
+        }
+      ]
+    },
+    {
+      "slug": "/budivnytstvo",
+      "template": "blocks",
+      "sections": [
+        {
+          "type": "cta_advanced"
+        }
+      ],
+      "h1": "Будівництво будинків під ключ",
+      "meta_description": "Будівництво приватних будинків під ключ у Луцьку та Волинській області. Фундамент, коробка, покрівля — весь цикл від GRV BUILD.",
+      "service_groups": [
+        {
+          "type": "construction",
+          "title": "Будівництво будинків",
+          "subtitle": "Повний цикл від фундаменту до ключів",
+          "items": [
+            {
+              "label": "Фундамент",
+              "detail": "стрічковий, плитний, палевий"
+            },
+            {
+              "label": "Коробка будинку",
+              "detail": "цегла, блок, монолітний каркас"
+            },
+            {
+              "label": "Покрівля",
+              "detail": "металочерепиця, профнастил, мансардний дах"
+            },
+            {
+              "label": "Фасадне оздоблення",
+              "detail": "штукатурка, плитка, клінкер"
+            },
+            {
+              "label": "Будинок під ключ",
+              "detail": "від фундаменту до чистового оздоблення"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "/fasad",
+      "template": "blocks",
+      "sections": [
+        {
+          "type": "linked_section",
+          "preset": "facade"
+        }
+      ],
+      "h1": "Фасадні роботи та утеплення",
+      "meta_description": "Фасадні роботи, утеплення та декоративна штукатурка у Луцьку та Волинській області. Клінкер, короїд, барашок — від GRV BUILD.",
+      "service_groups": [
+        {
+          "type": "facade",
+          "title": "Фасадні роботи",
+          "subtitle": "Утеплення, декор, захист",
+          "items": [
+            {
+              "label": "Утеплення",
+              "detail": "пінопласт, мінеральна вата, PIR-плити"
+            },
+            {
+              "label": "Декоративна штукатурка",
+              "detail": "короїд, барашок, мозаїка"
+            },
+            {
+              "label": "Клінкерна плитка та камінь",
+              "detail": "натуральний та штучний матеріал"
+            },
+            {
+              "label": "Монтаж водостоків та підшивка",
+              "detail": "пластик, метал, дерево"
+            },
+            {
+              "label": "Покраска фасаду",
+              "detail": "фасадна фарба різних виробників"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "/remont",
+      "template": "blocks",
+      "sections": [
+        {
+          "type": "cta_advanced"
+        }
+      ],
+      "h1": "Ремонт та реконструкція",
+      "meta_description": "Капітальний ремонт квартир та будинків у Луцьку. Внутрішні роботи будь-якої складності від GRV BUILD.",
+      "service_groups": [
+        {
+          "type": "repair",
+          "title": "Ремонт та реконструкція",
+          "subtitle": "Внутрішні роботи будь-якої складності",
+          "items": [
+            {
+              "label": "Штукатурка та вирівнювання стін",
+              "detail": "машинна і ручна подача"
+            },
+            {
+              "label": "Стяжка та нівелювання підлоги",
+              "detail": "суха та мокра стяжка"
+            },
+            {
+              "label": "Гіпсокартонні конструкції",
+              "detail": "перегородки, стелі, ніші"
+            },
+            {
+              "label": "Чистові роботи",
+              "detail": "плитка, ламінат, фарбування, шпалери"
+            },
+            {
+              "label": "Монтаж дверей та вікон"
+            },
+            {
+              "label": "Камін та барбекю"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "/about-us",
+      "template": "blocks",
+      "h1": "Про нас — GRV BUILD",
+      "meta_description": "Команда GRV BUILD — будівельники з досвідом, які роблять свою роботу по справжньому та якісно.",
+      "sections": [
+        {
+          "type": "team_section",
+          "eyebrow": "Наша команда",
+          "title_line1": "Люди, які",
+          "title_highlight": "будують твій дім"
+        }
+      ]
+    },
+    {
+      "slug": "/our-works",
+      "template": "blocks",
+      "sections": [
+        {
+          "type": "cta_advanced"
+        }
+      ],
+      "h1": "Наші роботи — портфоліо GRV BUILD",
+      "meta_description": "Реалізовані будівельні, фасадні та ремонтні проєкти GRV BUILD у Луцьку та Волинській області."
+    },
+    {
+      "slug": "/contacts",
+      "template": "blocks",
+      "h1": "Контакти GRV BUILD",
+      "meta_description": "Зв'яжіться з GRV BUILD — будівництво та ремонт у Луцьку. Безкоштовна консультація та виїзд на об'єкт."
+    },
+    {
+      "slug": "/region",
+      "template": "blocks",
+      "h1": "Регіони будівництва та ремонту",
+      "meta_description": "GRV BUILD працює у Луцьку, Волинській та Рівненській областях. Оберіть своє місто або район.",
+      "sections": [
+        {
+          "type": "regions_section",
+          "use_geo_catalog": true,
+          "title": "Географія нашої роботи",
+          "intro": "Повний спектр будівельних, фасадних та ремонтних послуг у вашому регіоні."
+        }
+      ]
+    },
+    {
+      "slug": "/region/region-lutsk",
+      "template": "blocks",
+      "h1": "Будівництво, фасади та ремонт у Луцьку",
+      "meta_description": "GRV BUILD у Луцьку — понад 15 реалізованих об'єктів. Будівництво, фасадні роботи та ремонт. Безкоштовний виїзд.",
+      "service_groups": [
+        {
+          "type": "construction",
+          "title": "Будівництво будинків у Луцьку",
+          "subtitle": "Повний цикл від фундаменту до ключів",
+          "description": "Зводимо приватні будинки будь-якої складності в Луцьку та передмісті. Власна бригада, контроль якості на кожному етапі.",
+          "items": [
+            {
+              "label": "Фундамент",
+              "detail": "стрічковий, плитний, палевий"
+            },
+            {
+              "label": "Коробка будинку",
+              "detail": "цегла, блок, монолітний каркас"
+            },
+            {
+              "label": "Покрівля",
+              "detail": "металочерепиця, профнастил, мансардний дах"
+            },
+            {
+              "label": "Фасадне оздоблення",
+              "detail": "штукатурка, плитка, клінкер"
+            },
+            {
+              "label": "Будинок під ключ",
+              "detail": "від фундаменту до чистового оздоблення"
+            }
+          ]
+        },
+        {
+          "type": "facade",
+          "title": "Фасадні роботи у Луцьку",
+          "subtitle": "Утеплення, декор, захист",
+          "description": "Якісне утеплення та декоративне оздоблення фасадів у Луцьку. Гарантія на матеріали та роботи — офіційно в договорі.",
+          "items": [
+            {
+              "label": "Утеплення",
+              "detail": "пінопласт, мінеральна вата, PIR-плити"
+            },
+            {
+              "label": "Декоративна штукатурка",
+              "detail": "короїд, барашок, мозаїка"
+            },
+            {
+              "label": "Клінкерна плитка та камінь",
+              "detail": "натуральний та штучний матеріал"
+            },
+            {
+              "label": "Монтаж водостоків та підшивка",
+              "detail": "пластик, метал, дерево"
+            },
+            {
+              "label": "Покраска фасаду",
+              "detail": "фасадна фарба різних виробників"
+            }
+          ]
+        },
+        {
+          "type": "repair",
+          "title": "Ремонт та реконструкція у Луцьку",
+          "subtitle": "Внутрішні роботи будь-якої складності",
+          "description": "Капітальний ремонт квартир та будинків у Луцьку. Від демонтажу до фінальних чистових робіт.",
+          "items": [
+            {
+              "label": "Штукатурка та вирівнювання стін",
+              "detail": "машинна і ручна подача"
+            },
+            {
+              "label": "Стяжка та нівелювання підлоги",
+              "detail": "суха та мокра стяжка"
+            },
+            {
+              "label": "Гіпсокартонні конструкції",
+              "detail": "перегородки, стелі, ніші"
+            },
+            {
+              "label": "Чистові роботи",
+              "detail": "плитка, ламінат, фарбування, шпалери"
+            },
+            {
+              "label": "Монтаж дверей та вікон"
+            },
+            {
+              "label": "Камін та барбекю"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "/region/region-kovel",
+      "template": "blocks",
+      "h1": "Будівництво та фасадні роботи у Ковелі",
+      "meta_description": "GRV BUILD у Ковелі — будівництво будинків, фасадне утеплення та ремонт. Безкоштовний виїзд на об'єкт.",
+      "service_groups": [
+        {
+          "type": "construction",
+          "title": "Будівництво у Ковелі",
+          "subtitle": "Фундамент, коробка, покрівля",
+          "description": "Зведення приватних будинків під ключ у Ковелі та районі.",
+          "items": [
+            {
+              "label": "Фундамент та коробка"
+            },
+            {
+              "label": "Покрівля"
+            },
+            {
+              "label": "Будинок під ключ"
+            }
+          ]
+        },
+        {
+          "type": "facade",
+          "title": "Фасадні роботи у Ковелі",
+          "subtitle": "Утеплення та оздоблення",
+          "description": "Утеплення пінопластом та мінватою, декоративна штукатурка, монтаж водостоків.",
+          "items": [
+            {
+              "label": "Утеплення"
+            },
+            {
+              "label": "Штукатурка короїд, барашок"
+            },
+            {
+              "label": "Водостоки"
+            }
+          ]
+        },
+        {
+          "type": "repair",
+          "title": "Ремонт у Ковелі",
+          "subtitle": "Внутрішні роботи",
+          "description": "Ремонт та реконструкція будинків у Ковелі.",
+          "items": [
+            {
+              "label": "Штукатурка та стяжка"
+            },
+            {
+              "label": "Чистові роботи"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "/region/region-rivne",
+      "template": "blocks",
+      "h1": "Будівництво будинків та фасадні роботи у Рівному",
+      "meta_description": "GRV BUILD у Рівному — будівництво будинків під ключ, фасадне утеплення та ремонт.",
+      "service_groups": [
+        {
+          "type": "construction",
+          "title": "Будівництво у Рівному",
+          "subtitle": "Від фундаменту до оздоблення",
+          "description": "Зведення приватних будинків у Рівному та районі.",
+          "items": [
+            {
+              "label": "Повний цикл під ключ"
+            },
+            {
+              "label": "Фундамент, коробка, дах"
+            }
+          ]
+        },
+        {
+          "type": "facade",
+          "title": "Фасадні роботи у Рівному",
+          "subtitle": "Утеплення та декор",
+          "description": "Утеплення та декоративне оздоблення фасадів у Рівному.",
+          "items": [
+            {
+              "label": "Короїд, барашок, клінкер"
+            }
+          ]
+        },
+        {
+          "type": "repair",
+          "title": "Ремонт у Рівному",
+          "subtitle": "Капітальний ремонт",
+          "description": "Капітальний ремонт та реконструкція у Рівненському районі.",
+          "items": [
+            {
+              "label": "Внутрішні роботи повний цикл"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "/region/region-lutskyi-raion",
+      "template": "blocks",
+      "h1": "Будівництво та фасадні роботи у Луцькому районі",
+      "meta_description": "GRV BUILD у Луцькому районі — будівництво приватних будинків та фасадні роботи в Торчині, Рожищі, Боратині.",
+      "service_groups": [
+        {
+          "type": "construction",
+          "title": "Будівництво в Луцькому районі",
+          "subtitle": "Під ключ без посередників",
+          "description": "Зведення будинків у селах та містечках Луцького району.",
+          "items": [
+            {
+              "label": "Фундамент, коробка, дах"
+            },
+            {
+              "label": "Будинок під ключ"
+            }
+          ]
+        },
+        {
+          "type": "facade",
+          "title": "Фасадні роботи в Луцькому районі",
+          "subtitle": "Утеплення та декор",
+          "description": "Утеплення та оздоблення фасадів у Торчині, Рожищі, Боратині.",
+          "items": [
+            {
+              "label": "Утеплення пінопластом та мінватою"
+            },
+            {
+              "label": "Декоративна штукатурка"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/6b63c4973_image.png",
+      "file_hint": "image",
+      "used_in": [
+        "region/lutsk hero"
+      ],
+      "label": "Луцьк — стела (hero)"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/90af1f515_image.png",
+      "file_hint": "image",
+      "used_in": [
+        "region/kovel hero"
+      ],
+      "label": "Ковель — стела (hero)"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/90e78d0f6_1779879657415041_345e0c5e-0f9b-4d03-a7ac-8ef775d65f0d.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-sturmika",
+        "RegionGallery"
+      ],
+      "label": "Стурміка — внутрішні роботи"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a5e48080b_5D75F260-8E33-455E-BB4F-B73B8ADD8DEF.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-sturmika"
+      ],
+      "label": "Стурміка — підготовка стін"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/8802deb7b_1779639871749925.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-sturmika",
+        "work_item:facade-lutsk",
+        "TeamCarousel:Максим"
+      ],
+      "label": "Плиткові роботи / Клінкер"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/d4838fe09_1779639888200139.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-dachne",
+        "work_item:facade-dachne",
+        "TeamCarousel:Максим cover"
+      ],
+      "label": "Дачне — венеціанська штукатурка"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/a6a1a476d_1779639871749925.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-dachne",
+        "work_item:facade-dachne",
+        "work_item:facade-kovel",
+        "FacadeGallery"
+      ],
+      "label": "Оздоблення / Утеплення фасаду"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/9ece18ba7_1779639888200139.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-lutsk-kamin",
+        "work_item:construction-boholyuby",
+        "ServicesSection:repair",
+        "FacadeGallery"
+      ],
+      "label": "Камін / Штукатурка"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/023cb03f4_1779640493773383.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-lutsk-kamin",
+        "work_item:facade-sturmika",
+        "ServicesSection:facade",
+        "FacadeGallery"
+      ],
+      "label": "Облицювання каміну / Декоративна штукатурка"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/5c1764f9b_1779640495370728.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-boholyuby",
+        "work_item:facade-boholyuby",
+        "FacadeGallery"
+      ],
+      "label": "Стяжка підлоги / Комбінований фасад"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/24f055dbd_1779640019874869.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:repair-boholyuby",
+        "work_item:facade-boholyuby",
+        "work_item:construction-rivne",
+        "ServicesSection:construction",
+        "ConstructionGallery",
+        "FacadeGallery"
+      ],
+      "label": "Фасад / Будівництво — фасад завершено"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/bbf9b3fe2_1779640019874869.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:facade-sturmika",
+        "work_item:construction-boholyuby",
+        "TeamCarousel:Олег cover"
+      ],
+      "label": "Фасад завершено / Зведення каркасу"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/52806e3a3_foundation.png",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:construction-sturmika",
+        "ConstructionGallery"
+      ],
+      "label": "Фундамент"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/04e21a6ea_house-box.png",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:construction-sturmika",
+        "ConstructionGallery"
+      ],
+      "label": "Зведення каркасу / Коробка"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/4692335b4_roof.png",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:construction-dachne",
+        "ConstructionGallery"
+      ],
+      "label": "Покрівля"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/83ab24b3a_1779640495370728.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:construction-dachne",
+        "ConstructionGallery"
+      ],
+      "label": "Будинок готовий"
+    },
+    {
+      "url": "https://media.base44.com/images/public/6a1311bd1062b12420e3c449/183fa433a_1779640019874869.jpg",
+      "file_hint": "image",
+      "used_in": [
+        "work_item:construction-lutsk",
+        "ConstructionGallery"
+      ],
+      "label": "Перекриття / Фасадні роботи"
+    },
+    {
+      "url": "https://media.base44.com/videos/public/6a1311bd1062b12420e3c449/15cfe171c_welcome.mp4",
+      "file_hint": "video",
+      "used_in": [
+        "TeamCarousel:Віталій",
+        "TeamCarousel:Андрій",
+        "CtaSection video"
+      ],
+      "label": "Welcome відео — Віталій"
+    },
+    {
+      "url": "https://media.base44.com/videos/public/6a1311bd1062b12420e3c449/db7dd2762_fasad.mp4",
+      "file_hint": "video",
+      "used_in": [
+        "ConstructionGallery video"
+      ],
+      "label": "Відео процесу — фасад"
+    }
+  ]
+}

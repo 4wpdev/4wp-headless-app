@@ -389,6 +389,12 @@ function fwp_headless_app_get_apps() {
 			'description' => 'Trainer portfolio with programs, certifications, and coaching focus.',
 			'inherits' => 'portfolio-v1',
 		),
+		'grv-build' => array(
+			'name'              => 'GRV Build',
+			'description'       => 'Construction company — work_item, team, faq, catalog_line, geo_area.',
+			'seed_file'         => 'grv-export.json',
+			'content_model_key' => 'headless-site',
+		),
 	);
 }
 
@@ -405,6 +411,14 @@ function fwp_headless_app_get_app_seed( $app_key ) {
 
 	if ( ! empty( $app['inherits'] ) && ! empty( $apps[ $app['inherits'] ]['seed'] ) ) {
 		return $apps[ $app['inherits'] ]['seed'];
+	}
+
+	if ( ! empty( $app['seed_file'] ) ) {
+		$path = dirname( __DIR__ ) . '/seeds/' . $app['seed_file'];
+		if ( file_exists( $path ) ) {
+			$data = json_decode( file_get_contents( $path ), true );
+			return is_array( $data ) ? $data : array();
+		}
 	}
 
 	return array();
